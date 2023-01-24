@@ -1,0 +1,30 @@
+<app-header></app-header>
+        <div class="container">
+            <ul>
+                <li *ngFor="let item of cartList" >
+                    <div>
+                        <img [src]="item.image">
+                    </div>
+                    <div>
+                        <a style="font-size:20px ;" >
+                           {{item.name}}
+                        </a>
+                    </div>
+                    <div style="font-size:20px ;">{{item.price}} TND</div>
+                    <button class="btn btn-danger rounded-pill" (click)="removeCartItem(item.id)">
+                        Remove
+                    </button>
+                
+                </li>
+            </ul>
+        
+            <div class="checkout">
+                <div class="price">
+                    <div class="total-price-dinar">{{totalPrice}}TND</div>
+                    <div class="total-price-dollar">{{totalPrice | dollar}}</div>
+                    <div class="total-price-euro">{{totalPrice | euro}}</div>
+                </div>
+            </div>
+        
+        </div>
+        <!-- <app-footer></app-footer> -->

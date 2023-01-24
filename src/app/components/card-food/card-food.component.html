@@ -1,0 +1,37 @@
+<app-header></app-header>
+<div class=" container p-5 ">
+    <div class="d-flex justify-content-around">
+        <div class="align-items-start">
+            <img src={{foodDetails?.image}} alt="pizza">
+        </div>
+        <div class="details">
+            <div class="type badge text-bg-primary">
+                <span>{{foodDetails?.type}}</span>
+            </div>
+            <div>
+                <span class="text-danger name">
+                    {{foodDetails?.name}}
+                </span>
+            </div>
+            <div class="rates">
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star"></i>
+                <i class="bi bi-star"></i>
+            </div>
+            <div class="ingredient">
+                <p>{{foodDetails?.ingredients}}</p>
+            </div>
+            <div class="price">
+                <p>Price <span class="badge rounded-pill-2 text-bg-success">{{foodDetails?.price}} TND</span></p> 
+            </div>     
+            <div class="spacer">
+                <button mat-raised-button color="warn" (click)="addCartItem()" [disabled]="isDisabled">Add Card</button>
+                <button mat-raised-button color="primary"  routerLink="/menu"> Back</button>
+            </div>
+        </div> 
+    </div>
+</div>
+<app-footer></app-footer>
